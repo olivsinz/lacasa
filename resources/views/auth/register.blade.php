@@ -47,14 +47,29 @@
                           <h4 class="register-form-title">{{ __('Register') }}</h4>
                           <form method="POST" action="{{ route('register') }}">
                               @csrf
-                              <div class="form-group">
-                                  <label for="name">{{ __('Name') }}</label>
-                                  <input  id="name" type="text" class="form-control @error('name') is-invalid @enderror" aria-describedby="name" name="name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                  @error('name')
-                                      <span class="invalid-feedback" role="alert">
-                                          <strong>{{ $message }}</strong>
-                                      </span>
-                                  @enderror
+                              <div class="row">
+                                <div class="col-md-6 col-lg-6 col-sm-12 col-12">
+                                  <div class="form-group">
+                                      <label for="firstname">{{ __('First name') }}</label>
+                                      <input  id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" aria-describedby="firstname" name="firstname" placeholder="{{ __('First name') }}" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                                      @error('firstname')
+                                          <span class="invalid-feedback" role="alert">
+                                              <strong>{{ $message }}</strong>
+                                          </span>
+                                      @enderror
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-sm-12 col-12">
+                                  <div class="form-group">
+                                      <label for="lastname">{{ __('Last name') }}</label>
+                                      <input  id="lastname" type="text" class="form-control @error('name') is-invalid @enderror" aria-describedby="lastname" name="lastname" placeholder="{{ __('Last name') }}" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                      @error('lastname')
+                                          <span class="invalid-feedback" role="alert">
+                                              <strong>{{ $message }}</strong>
+                                          </span>
+                                      @enderror
+                                  </div>
+                                </div>
                               </div>
 
                               <div class="form-group">
